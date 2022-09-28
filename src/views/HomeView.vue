@@ -1,7 +1,12 @@
 <template>
-  <div></div>
+  <div>{{ countries }}</div>
 </template>
 
-<script setup></script>
+<script setup>
+import { storeToRefs } from "pinia";
+import { useCountries } from "../stores/countries";
+
+const { countries } = storeToRefs(useCountries());
+</script>
 
 <style lang="scss" scoped></style>

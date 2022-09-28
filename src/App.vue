@@ -11,4 +11,8 @@ import TheNav from "./components/TheNav.vue";
   <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped>
+#app {
+  font-family: "Nunito", sans-serif;
+}
+</style>

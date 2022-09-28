@@ -9,7 +9,6 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
-    "@vue-hero-icons/outline": "^1.7.2",
     "autoprefixer": "^10",
     "axios": "^0.27.2",
     "pinia": "^2.0.21",

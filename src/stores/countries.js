@@ -7,7 +7,7 @@ export const useCountries = defineStore('countries',() => {
     const countries = ref([])
 
     async function getCountries(){
-        await axios.get('https://restcountries.com/v3.1/lang/eng').then((data)=>{
+        await axios.get('https://restcountries.com/v3.1/all').then((data)=>{
             countries.value = data.data
         })
 

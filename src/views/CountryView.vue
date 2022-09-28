@@ -19,7 +19,7 @@
       </div>
 
       <div class="w-1/2 flex flex-col gap-10">
-        <h1 class="text-4xl font-bold">{{ country.name }} {{ countries.alpha2code }}</h1>
+        <h1 class="text-4xl font-bold">{{ country.name }}</h1>
         <div class="flex justify-between">
           <div class="mr-10 w-1/2 flex flex-col gap-5">
             <h2>
@@ -34,7 +34,7 @@
           <div class="w-1/2 mr-10 flex flex-col gap-5">
             <h2>
               <span class="font-bold">Top Level Domain:</span>
-              {{ country.topLevelDomain }}
+              {{ country.topLevelDomain[0] }}
             </h2>
             <h2>
               <span class="font-bold">Currencies:</span>
@@ -51,18 +51,17 @@
           </div>
         </div>
         <div>
-          <h2 class="font-bold">Border Countries:</h2>
+          <span class="font-bold pr-1">Border Countries:</span>
           <!-- border countries -->
-          <div class="flex gap-3 mt-3">
-            <router-link
-              v-for="(border, index) in country.borders"
-              :key="index"
-              :to="`/country/${border}`"
-              class="border inline-flex items-center px-7 py-1 shadow-xl rounded-md"
-            >
-              <p>{{ border }}</p>
-            </router-link>
-          </div>
+
+          <router-link
+            v-for="(border, index) in country.borders"
+            :key="index"
+            :to="`/country/${border}`"
+            class="border inline-flex items-center px-7 py-1 shadow-xl rounded-md"
+          >
+            {{ border }}
+          </router-link>
         </div>
       </div>
     </div>
@@ -82,7 +81,7 @@ const currentSlug = route.params.slug;
 const { countries } = storeToRefs(useCountries());
 
 const country = computed(() => {
-  return countries.value.find((country) => country.name === currentSlug);
+  return countries.value.find((country) => country.alpha3Code === currentSlug);
 });
 </script>
 

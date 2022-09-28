@@ -34,7 +34,7 @@
       <div class="container px-5 py-20 mx-auto">
         <div class="flex flex-wrap -m-4">
           <router-link
-            :to="{ name: 'country', params: { slug: country.name } }"
+            :to="{ name: 'country', params: { slug: country.alpha3Code } }"
             class="lg:w-1/4 md:w-1/2 p-4 w-full"
             v-for="(country, index) in countries"
             :key="index"

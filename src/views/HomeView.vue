@@ -6,14 +6,16 @@
     >
       <!-- search input -->
       <div>
-        <button class="r">
+        <button class="r" @click="search()">
           <i class="fa-solid fa-search"></i>
         </button>
         <input
           type="text"
           placeholder="Search for a country..."
           class="border h-10 w-60 ml-2 placeholder-gray-500 placeholder:text-sm placeholder:pl-7"
+          v-model="name"
         />
+        {{ name }}
       </div>
 
       <!-- filter by region -->
@@ -68,9 +70,25 @@
 
 <script setup>
 import { storeToRefs } from "pinia";
+import { computed, ref } from "vue";
 import { useCountries } from "../stores/countries";
 
 const { countries } = storeToRefs(useCountries());
+
+//get the countries
+const getCountries = async () => {
+  await useCountries().getCountries();
+};
+
+getCountries();
+
+//search functionality
+const name = ref("");
+const search = computed(() => {
+  return countries.value.filter((country) => {
+    return country.name.toLowerCase().includes(name.value.toLowerCase());
+  });
+});
 
 console.log(countries);
 </script>

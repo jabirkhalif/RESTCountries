@@ -80,6 +80,13 @@ const currentSlug = route.params.slug;
 
 const { countries } = storeToRefs(useCountries());
 
+//get the countries
+const getCountries = async () => {
+  await useCountries().getCountries();
+};
+
+getCountries();
+
 const country = computed(() => {
   return countries.value.find((country) => country.alpha3Code === currentSlug);
 });

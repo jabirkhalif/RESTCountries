@@ -34,7 +34,7 @@
       <div class="container px-5 py-20 mx-auto">
         <div class="flex flex-wrap -m-4">
           <router-link
-            :to="{ name: 'country', params: { slug: country.name.common } }"
+            :to="{ name: 'country', params: { slug: country.name } }"
             class="lg:w-1/4 md:w-1/2 p-4 w-full"
             v-for="(country, index) in countries"
             :key="index"
@@ -42,12 +42,12 @@
             <div class="h-full border rounded-lg overflow-hidden">
               <img
                 class="lg:h-52 md:h-36 w-full object-cover object-center"
-                :src="country.flags.svg"
+                :src="country.flags.png"
                 alt="flag"
               />
               <div class="p-6">
                 <h1 class="title-font text-lg font-bold text-gray-900 mb-3">
-                  {{ country.name.common }}
+                  {{ country.name }}
                 </h1>
                 <h2>
                   <span class="font-semibold">Population:</span> {{ country.population }}

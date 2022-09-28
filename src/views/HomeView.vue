@@ -1,9 +1,7 @@
 <template>
   <div>
     <!-- search functionalities -->
-    <div
-      class="container px-5 mx-auto border border-green-700 h-16 mt-10 flex items-center justify-between"
-    >
+    <div class="container px-5 mx-auto h-16 mt-6 flex items-center justify-between">
       <!-- search input -->
       <div>
         <button class="r" @click="search()">
@@ -33,7 +31,7 @@
     </div>
     <!-- countries -->
     <section class="text-gray-600 body-font">
-      <div class="container px-5 py-20 mx-auto">
+      <div class="container px-5 py-8 mx-auto">
         <div class="flex flex-wrap -m-4">
           <router-link
             :to="{ name: 'country', params: { slug: country.alpha3Code } }"
@@ -85,9 +83,7 @@ getCountries();
 //search functionality
 const name = ref("");
 const search = computed(() => {
-  return countries.value.filter((country) => {
-    return country.name.toLowerCase().includes(name.value.toLowerCase());
-  });
+  return countries.find((country) => country.name === name.value);
 });
 
 console.log(countries);

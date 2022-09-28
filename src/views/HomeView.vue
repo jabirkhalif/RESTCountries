@@ -1,7 +1,37 @@
 <template>
-  <div class="about">
+  <div>
+    <!-- search functionalities -->
+    <div
+      class="container px-5 mx-auto border border-green-700 h-16 mt-10 flex items-center justify-between"
+    >
+      <!-- search input -->
+      <div>
+        <button class="r">
+          <i class="fa-solid fa-search"></i>
+        </button>
+        <input
+          type="text"
+          placeholder="Search for a country..."
+          class="border h-10 w-60 ml-2 placeholder-gray-500 placeholder:text-sm placeholder:pl-7"
+        />
+      </div>
+
+      <!-- filter by region -->
+
+      <div class="">
+        <select name="region" id="region" class="border h-10 px-7">
+          <option value="all">Filter by Region</option>
+          <option value="africa">Africa</option>
+          <option value="americas">Americas</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+        </select>
+      </div>
+    </div>
+    <!-- countries -->
     <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
+      <div class="container px-5 py-20 mx-auto">
         <div class="flex flex-wrap -m-4">
           <div
             class="lg:w-1/4 md:w-1/2 p-4 w-full"

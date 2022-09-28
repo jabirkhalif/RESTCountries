@@ -8,11 +8,11 @@
             v-for="(country, index) in countries"
             :key="index"
           >
-            <div class="h-full border-2 border-opacity-60 rounded-lg overflow-hidden">
+            <div class="h-full border rounded-lg overflow-hidden">
               <img
-                class="lg:h-48 md:h-36 w-full object-cover h-full"
+                class="lg:h-52 md:h-36 w-full object-cover object-center"
                 :src="country.flags.svg"
-                alt="blog"
+                alt="flag"
               />
               <div class="p-6">
                 <h1 class="title-font text-lg font-bold text-gray-900 mb-3">

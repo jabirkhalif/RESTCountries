@@ -50,7 +50,8 @@
                   {{ country.name }}
                 </h1>
                 <h2>
-                  <span class="font-semibold">Population:</span> {{ country.population }}
+                  <span class="font-semibold">Population:</span>
+                  {{ country.population.toLocaleString() }}
                 </h2>
                 <h2><span class="font-semibold">Region:</span> {{ country.region }}</h2>
 

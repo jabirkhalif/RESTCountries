@@ -10,10 +10,8 @@ export const useCountries = defineStore('countries',() => {
         await axios.get('https://restcountries.com/v2/all').then((data)=>{
             countries.value = data.data
         })
-
-
     }
-    getCountries()
+    
 
     return {countries,getCountries}
 

@@ -33,7 +33,8 @@
     <section class="text-gray-600 body-font">
       <div class="container px-5 py-20 mx-auto">
         <div class="flex flex-wrap -m-4">
-          <div
+          <router-link
+            :to="{ name: 'country', params: { slug: country.name.common } }"
             class="lg:w-1/4 md:w-1/2 p-4 w-full"
             v-for="(country, index) in countries"
             :key="index"
@@ -56,7 +57,7 @@
                 <h2><span class="font-semibold">Capital:</span> {{ country.capital }}</h2>
               </div>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </section>

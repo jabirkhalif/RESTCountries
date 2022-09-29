@@ -13,7 +13,7 @@
       <div class="w-1/2">
         <img
           class="lg:h-[45vh] object-contain object-center w-full ml"
-          :src="country.flags.svg"
+          :src="country.flags.png"
           alt=""
         />
       </div>

@@ -3,9 +3,10 @@
     <!-- search functionalities -->
     <div
       class="container px-5 mx-auto h-20 mt-6 flex items-center justify-between dark:text-white"
+      id="searchContainer"
     >
       <!-- search input -->
-      <div class="rounded-md pl-6 dark:bg-slate-700 bg-white">
+      <div class="rounded-md pl-6 dark:bg-slate-700 bg-white" id="search">
         <button @click="search(name)">
           <i class="fa-solid fa-search"></i>
         </button>
@@ -83,7 +84,19 @@
   </div>
 </template>
 
-<style></style>
+<style scoped>
+@media screen and (max-width: 768px) {
+  #searchContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  #search {
+    margin-bottom: 1rem;
+  }
+}
+</style>
 
 <script setup>
 import { storeToRefs } from "pinia";

@@ -1,5 +1,5 @@
 <template>
-  <div class="px-40 py-20 m-auto h-[100vh]">
+  <div class="px-40 py-20 m-auto h-[100vh]" id="countryContainer">
     <router-link
       to="/"
       class="border inline-flex items-center px-7 py-1 shadow-xl rounded-md dark:text-white"
@@ -9,17 +9,17 @@
     </router-link>
 
     <!-- country details -->
-    <div class="flex h-5/6 items-center">
-      <div class="w-1/2">
+    <div class="flex h-5/6 items-center" id="countryDetails">
+      <div class="w-1/2" id="flag">
         <img
           class="lg:h-[45vh] object-contain object-center w-full ml"
-          :src="country.flags.png"
+          :src="country.flags.svg"
           alt=""
         />
       </div>
 
-      <div class="w-1/2 flex flex-col gap-10 pl-24 dark:text-white">
-        <h1 class="text-4xl font-bold dark:text-stone-400">
+      <div class="w-1/2 flex flex-col gap-10 pl-24 dark:text-white" id="details">
+        <h1 class="text-4xl font-bold dark:text-stone-400" id="name">
           {{ country.name }}
         </h1>
         <div class="flex justify-between">
@@ -106,4 +106,27 @@ const country = computed(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+@media screen and (max-width: 768px) {
+  #countryDetails {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    height: 100%;
+    font-size: 10px;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+  #flag {
+    width: 100%;
+  }
+  #details {
+    width: 100%;
+    padding: 0;
+  }
+  #name {
+    font-size: 2px;
+  }
+}
+</style>

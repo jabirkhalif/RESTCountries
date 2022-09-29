@@ -3,6 +3,7 @@
     <router-link
       to="/"
       class="border inline-flex items-center px-7 py-1 shadow-xl rounded-md dark:text-white"
+      id="backBtn"
     >
       <i class="fa-solid fa-arrow-left mr-3"></i>
       <p>Back</p>
@@ -22,7 +23,7 @@
         <h1 class="text-4xl font-bold dark:text-stone-400" id="name">
           {{ country.name }}
         </h1>
-        <div class="flex justify-between">
+        <div class="flex justify-between" id="detailsContainer">
           <div class="mr-10 w-1/2 flex flex-col gap-5">
             <h2>
               <span class="font-bold dark:text-stone-400">Native Name:</span>
@@ -65,7 +66,9 @@
           </div>
         </div>
         <div>
-          <span class="font-bold dark:text-stone-400 pr-1">Border Countries:</span>
+          <span class="font-bold dark:text-stone-400 pr-1" id="borderBtn"
+            >Border Countries:</span
+          >
           <!-- border countries -->
 
           <router-link
@@ -108,15 +111,28 @@ const country = computed(() => {
 
 <style scoped>
 @media screen and (max-width: 768px) {
+  #countryContainer {
+    padding: unset;
+    height: auto;
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #backBtn {
+    width: 40%;
+    margin-top: 20px;
+  }
   #countryDetails {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+
     height: 100%;
     font-size: 10px;
-    width: 100vw;
-    margin: 0;
+
     padding: 0;
+    gap: 10px;
   }
   #flag {
     width: 100%;
@@ -124,9 +140,33 @@ const country = computed(() => {
   #details {
     width: 100%;
     padding: 0;
+    margin: 0%;
+    gap: 10px;
   }
   #name {
-    font-size: 2px;
+    font-size: 2.5em;
+  }
+  #detailsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  #detailsContainer > div {
+    width: 100%;
+    gap: 0;
+    font-size: 1.6em;
+    font-weight: 300;
+  }
+  #detailsContainer > div > h2 {
+    padding-bottom: 10px;
+    font-weight: 300;
+  }
+  #detailsContainer > div > h2 > span {
+    font-weight: 400;
+  }
+  #borderBtn {
+    font-size: 1.6em;
+    font-weight: 300;
   }
 }
 </style>

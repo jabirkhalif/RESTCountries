@@ -5,7 +5,7 @@
       class="container px-5 mx-auto h-20 mt-6 flex items-center justify-between dark:text-white"
     >
       <!-- search input -->
-      <div class="rounded-md pl-6 dark:bg-slate-700">
+      <div class="rounded-md pl-6 dark:bg-slate-700 bg-white">
         <button @click="search(name)">
           <i class="fa-solid fa-search"></i>
         </button>
@@ -48,7 +48,7 @@
             :key="index"
           >
             <div
-              class="h-full rounded-lg overflow-hidden dark:bg-slate-800 dark:text-white"
+              class="h-full rounded-lg overflow-hidden dark:bg-slate-800 dark:text-white bg-white"
             >
               <img
                 class="lg:h-52 md:h-36 w-full object-cover object-center"

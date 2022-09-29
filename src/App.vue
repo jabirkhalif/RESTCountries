@@ -4,7 +4,7 @@ import TheNav from "./components/TheNav.vue";
 </script>
 
 <template>
-  <div class="dark:bg-slate-900">
+  <div class="bg-gray-100 dark:bg-slate-900">
     <header>
       <TheNav />
     </header>

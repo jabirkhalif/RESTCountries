@@ -1,27 +1,29 @@
 <template>
-  <div>
+  <div class="">
     <!-- search functionalities -->
-    <div class="container px-5 mx-auto h-16 mt-6 flex items-center justify-between">
+    <div
+      class="container px-5 mx-auto h-20 mt-6 flex items-center justify-between dark:text-white"
+    >
       <!-- search input -->
-      <div class="border pl-6">
+      <div class="rounded-md pl-6 dark:bg-slate-700">
         <button @click="search(name)">
           <i class="fa-solid fa-search"></i>
         </button>
         <input
           type="text"
           placeholder="Search for a country..."
-          class="h-10 w-60 placeholder-gray-500 placeholder:text-sm placeholder:pl-7"
+          class="h-12 w-60 placeholder-gray-500 placeholder:text-sm placeholder:pl-7 focus:outline-none mx-2 dark:bg-slate-700"
           v-model="name"
         />
       </div>
 
       <!-- filter by region -->
 
-      <div class="">
+      <div class="w-44 px-6 dark:bg-slate-700 rounded-md">
         <select
           name="region"
           id="region"
-          class="border h-10 px-7"
+          class="h-12 dark:bg-slate-700 rounded-md mx-auto"
           v-model="region"
           @click="filterByRegion(region)"
         >
@@ -31,9 +33,6 @@
           <option value="asia">Asia</option>
           <option value="europe">Europe</option>
           <option value="oceania">Oceania</option>
-          {{
-            region
-          }}
         </select>
       </div>
     </div>
@@ -48,23 +47,33 @@
             v-for="(country, index) in countries"
             :key="index"
           >
-            <div class="h-full border rounded-lg overflow-hidden">
+            <div
+              class="h-full rounded-lg overflow-hidden dark:bg-slate-800 dark:text-white"
+            >
               <img
                 class="lg:h-52 md:h-36 w-full object-cover object-center"
                 :src="country.flags.png"
                 alt="flag"
               />
               <div class="p-6">
-                <h1 class="title-font text-lg font-bold text-gray-900 mb-3">
+                <h1
+                  class="title-font text-lg font-bold text-gray-900 dark:text-stone-300 mb-3"
+                >
                   {{ country.name }}
                 </h1>
                 <h2>
-                  <span class="font-semibold">Population:</span>
+                  <span class="font-semibold dark:text-stone-300">Population:</span>
                   {{ country.population.toLocaleString() }}
                 </h2>
-                <h2><span class="font-semibold">Region:</span> {{ country.region }}</h2>
+                <h2>
+                  <span class="font-semibold dark:text-stone-300">Region:</span>
+                  {{ country.region }}
+                </h2>
 
-                <h2><span class="font-semibold">Capital:</span> {{ country.capital }}</h2>
+                <h2>
+                  <span class="font-semibold dark:text-stone-300">Capital:</span>
+                  {{ country.capital }}
+                </h2>
               </div>
             </div>
           </router-link>
@@ -80,7 +89,6 @@
 import { storeToRefs } from "pinia";
 import { ref } from "vue";
 import { useCountries } from "../stores/countries";
-
 const { countries } = storeToRefs(useCountries());
 
 //get the countries

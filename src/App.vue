@@ -4,11 +4,13 @@ import TheNav from "./components/TheNav.vue";
 </script>
 
 <template>
-  <header>
-    <TheNav />
-  </header>
+  <div class="dark:bg-slate-900">
+    <header>
+      <TheNav />
+    </header>
 
-  <RouterView />
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>

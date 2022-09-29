@@ -1,5 +1,5 @@
 <template>
-  <div class="px-40 py-20 mx-auto h-[80vh]">
+  <div class="px-40 py-20 m-auto h-[100vh]">
     <router-link
       to="/"
       class="border inline-flex items-center px-7 py-1 shadow-xl rounded-md"
@@ -61,7 +61,7 @@
             v-for="(border, index) in country.borders"
             :key="index"
             :to="`/country/${border}`"
-            class="border inline-flex items-center px-7 py-1 shadow-xl rounded-md"
+            class="border inline-flex items-center mr-2 px-5 py-1 shadow-xl rounded-md"
           >
             {{ border }}
           </router-link>

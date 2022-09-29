@@ -20,4 +20,17 @@ const isDark = useDark();
 const toggleDark = useToggle(isDark);
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+@media screen and (max-width: 768px) {
+  nav {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  h1 {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 0.8rem;
+  }
+}
+</style>

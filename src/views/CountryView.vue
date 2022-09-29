@@ -75,7 +75,7 @@
             v-for="(border, index) in country.borders"
             :key="index"
             :to="`/country/${border}`"
-            class="border inline-flex items-center mr-2 px-5 py-1 shadow-xl rounded-md"
+            class="border inline-flex items-center mr-2 px-5 py-1 shadow-xl rounded-md dark:border-stone-400"
           >
             {{ border }}
           </router-link>

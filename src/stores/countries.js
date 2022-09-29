@@ -10,12 +10,22 @@ export const useCountries = defineStore("countries", () => {
    countries.value = data.data
   })
  }
-
+ //search
  function search(name) {
-  return countries.value.filter((country) => {
-   return country.name.includes(name.value)
+  countries.value = ref([])
+  axios.get(`https://restcountries.com/v2/name/${name}`).then((data) => {
+   countries.value = data.data
   })
  }
 
- return { countries, getCountries, search }
+ //filter by region
+
+ function filterByRegion(region) {
+  countries.value = ref([])
+  axios.get(`https://restcountries.com/v2/region/${region}`).then((data) => {
+   countries.value = data.data
+  })
+ }
+
+ return { countries, getCountries, search, filterByRegion }
 })

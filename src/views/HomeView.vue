@@ -13,19 +13,27 @@
           class="border h-10 w-60 ml-2 placeholder-gray-500 placeholder:text-sm placeholder:pl-7"
           v-model="name"
         />
-        {{ name }}
       </div>
 
       <!-- filter by region -->
 
       <div class="">
-        <select name="region" id="region" class="border h-10 px-7">
-          <option value="all">Filter by Region</option>
+        <select
+          name="region"
+          id="region"
+          class="border h-10 px-7"
+          v-model="region"
+          @click="filterByRegion(region)"
+        >
+          <option disabled value>Filter by Region</option>
           <option value="africa">Africa</option>
           <option value="americas">Americas</option>
           <option value="asia">Asia</option>
           <option value="europe">Europe</option>
           <option value="oceania">Oceania</option>
+          {{
+            region
+          }}
         </select>
       </div>
     </div>
@@ -85,8 +93,15 @@ getCountries();
 //search functionality
 const name = ref("");
 
-const search = () => {
-  useCountries().search(name.value);
+const search = async (name) => {
+  await useCountries().search(name);
+};
+
+//filter by region
+const region = ref("");
+
+const filterByRegion = async (region) => {
+  await useCountries().filterByRegion(region);
 };
 
 console.log(countries);

@@ -12,13 +12,13 @@
     <div class="flex h-full items-center">
       <div class="w-1/2">
         <img
-          class="lg:h-[45vh] md:h-36 object-cover object-center w-4/5 ml"
+          class="lg:h-[45vh] object-contain object-center w-full ml"
           :src="country.flags.svg"
           alt=""
         />
       </div>
 
-      <div class="w-1/2 flex flex-col gap-10">
+      <div class="w-1/2 flex flex-col gap-10 pl-24">
         <h1 class="text-4xl font-bold">{{ country.name }}</h1>
         <div class="flex justify-between">
           <div class="mr-10 w-1/2 flex flex-col gap-5">
@@ -26,7 +26,10 @@
               <span class="font-bold">Native Name:</span>
               {{ country.nativeName }}
             </h2>
-            <h2><span class="font-bold">Population:</span> {{ country.population }}</h2>
+            <h2>
+              <span class="font-bold">Population:</span>
+              {{ country.population.toLocaleString() }}
+            </h2>
             <h2><span class="font-bold">Region:</span> {{ country.region }}</h2>
             <h2><span class="font-bold">Sub Region:</span> {{ country.subregion }}</h2>
             <h2><span class="font-bold">Capital:</span> {{ country.capital }}</h2>

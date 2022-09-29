@@ -3,14 +3,14 @@
     <!-- search functionalities -->
     <div class="container px-5 mx-auto h-16 mt-6 flex items-center justify-between">
       <!-- search input -->
-      <div>
-        <button class="r" @click="search(name)">
+      <div class="border pl-6">
+        <button @click="search(name)">
           <i class="fa-solid fa-search"></i>
         </button>
         <input
           type="text"
           placeholder="Search for a country..."
-          class="border h-10 w-60 ml-2 placeholder-gray-500 placeholder:text-sm placeholder:pl-7"
+          class="h-10 w-60 placeholder-gray-500 placeholder:text-sm placeholder:pl-7"
           v-model="name"
         />
       </div>

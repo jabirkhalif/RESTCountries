@@ -26,7 +26,7 @@
           id="region"
           class="h-12 dark:bg-slate-700 rounded-md mx-auto focus:outline-none"
           v-model="region"
-          @click="filterByRegion(region)"
+          @change="filterByRegion(region)"
         >
           <option disabled value>Filter by Region</option>
           <option value="africa">Africa</option>

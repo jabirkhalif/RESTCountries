@@ -23,7 +23,7 @@
         <select
           name="region"
           id="region"
-          class="h-12 dark:bg-slate-700 rounded-md mx-auto"
+          class="h-12 dark:bg-slate-700 rounded-md mx-auto focus:outline-none"
           v-model="region"
           @click="filterByRegion(region)"
         >

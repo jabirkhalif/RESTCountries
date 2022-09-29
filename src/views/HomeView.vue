@@ -4,7 +4,7 @@
     <div class="container px-5 mx-auto h-16 mt-6 flex items-center justify-between">
       <!-- search input -->
       <div>
-        <button class="r" @click="search()">
+        <button class="r" @click="search(name)">
           <i class="fa-solid fa-search"></i>
         </button>
         <input
@@ -70,7 +70,7 @@
 
 <script setup>
 import { storeToRefs } from "pinia";
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import { useCountries } from "../stores/countries";
 
 const { countries } = storeToRefs(useCountries());
@@ -84,9 +84,10 @@ getCountries();
 
 //search functionality
 const name = ref("");
-const search = computed(() => {
-  return countries.find((country) => country.name === name.value);
-});
+
+const search = () => {
+  useCountries().search(name.value);
+};
 
 console.log(countries);
 </script>
